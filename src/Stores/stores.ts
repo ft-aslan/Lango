@@ -13,11 +13,11 @@ export const wordbook = createWordbook();
 type Word = { text: string; numberOfUsage: number, creationDate: Date };
 
 function createWordbook() {
-    (window as any).api.receive("request-wordbook-json", (wordbook : Word[]) => {
-        set(wordbook);
-    });
+    // (window as any).api.receive("request-wordbook-json", (wordbook : Word[]) => {
+    //     set(wordbook);
+    // });
 
-    (window as any).api.send("request-wordbook-json");
+    // (window as any).api.send("request-wordbook-json");
 
     const { subscribe, set, update } = writable<Word[]>([]);
 

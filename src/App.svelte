@@ -12,9 +12,9 @@
 
     currentTab.set("translation");
 
-    (window as any).api.receive("focusedToTheMainWindow", (args) => {
-        $targetWords = args;
-    });
+    // (window as any).api.receive("focusedToTheMainWindow", (args) => {
+    //     $targetWords = args;
+    // });
 </script>
 
 <main>

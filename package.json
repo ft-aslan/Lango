@@ -1,65 +1,37 @@
 {
-  "name": "langovite",
-  "version": "0.0.0",
-  "main": "index.js",
-  "author": {"name": "Fatih Aslancan"},
-  "description": "Translation App",
+  "name": "lango",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "start": "concurrently \"npm:dev\" \"electron-forge start\"",
-    "debug": "concurrently \"npm:dev\" \"npm:electron-debug\"",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "electron-start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "tauri": "tauri"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-    "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "@sveltejs/vite-plugin-svelte": "1.0.0-next.32",
-    "concurrently": "^6.0.2",
-    "electron": "^16.0.5",
-    "electron-reloader": "^1.2.1",
-    "sass": "^1.32.10",
-    "svelte": "^3.44.3",
-    "svelte-preprocess": "^4.6.9",
-    "typescript": "^4.2.3",
-    "vite": "^2.1.5"
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@tauri-apps/cli": "^1.0.5",
+    "@tsconfig/svelte": "^2.0.0",
+    "node-sass": "^7.0.1",
+    "qs": "^6.11.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "tailwindcss": "^3.1.7",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
   },
   "dependencies": {
-    "bulma": "^0.9.3",
-    "electron-squirrel-startup": "^1.0.0",
-    "qs": "^6.10.1"
-  },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "langovite"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
+    "@tauri-apps/api": "^1.0.2",
+    "bulma": "^0.9.4",
+    "sirv-cli": "^2.0.0"
   }
 }

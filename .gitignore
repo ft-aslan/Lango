@@ -1,6 +1,4 @@
 /node_modules/
-/dist/
-/.vscode/
-.DS_Store
+/public/build/
 
-out/
+.DS_Store
